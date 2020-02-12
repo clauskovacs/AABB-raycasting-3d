@@ -1,0 +1,969 @@
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:strdup
+   fun:_XlcCreateLC
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+   fun:XkbTranslateKeySym
+   fun:XLookupString
+   fun:fgPlatformProcessSingleEvent
+   fun:glutMainLoopEvent
+   fun:glutMainLoop
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:strdup
+   fun:_XlcResolveLocaleName
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+   fun:XkbTranslateKeySym
+   fun:XLookupString
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:strdup
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+   fun:XkbTranslateKeySym
+   fun:XLookupString
+   fun:fgPlatformProcessSingleEvent
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:calloc
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:calloc
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   fun:_Z6Renderv
+   fun:fghRedrawWindow
+   obj:/usr/lib64/libglut.so.3.10.0
+   fun:fgEnumWindows
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:malloc
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcAddLoader
+   fun:_XlcInitLoader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+   fun:XkbTranslateKeySym
+   fun:XLookupString
+   fun:fgPlatformProcessSingleEvent
+   fun:glutMainLoopEvent
+   fun:glutMainLoop
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcAddLoader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+   fun:XkbTranslateKeySym
+   fun:XLookupString
+   fun:fgPlatformProcessSingleEvent
+   fun:glutMainLoopEvent
+   fun:glutMainLoop
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:realloc
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+   fun:XkbTranslateKeySym
+   fun:XLookupString
+   fun:fgPlatformProcessSingleEvent
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+   fun:XkbTranslateKeySym
+   fun:XLookupString
+   fun:fgPlatformProcessSingleEvent
+   fun:glutMainLoopEvent
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:strdup
+   fun:_dl_load_cache_lookup
+   fun:_dl_map_object
+   fun:dl_open_worker
+   fun:_dl_catch_error
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_error
+   fun:_dlerror_run
+   fun:dlopen@@GLIBC_2.2.5
+   obj:/usr/lib64/libGLX.so.0.0.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_dl_new_object
+   fun:_dl_map_object_from_fd
+   fun:_dl_map_object
+   fun:dl_open_worker
+   fun:_dl_catch_error
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_error
+   fun:_dlerror_run
+   fun:dlopen@@GLIBC_2.2.5
+   obj:/usr/lib64/libGLX.so.0.0.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+   fun:XkbTranslateKeySym
+   fun:XLookupString
+   fun:fgPlatformProcessSingleEvent
+   fun:glutMainLoopEvent
+   fun:glutMainLoop
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+   fun:XkbTranslateKeySym
+   fun:XLookupString
+   fun:fgPlatformProcessSingleEvent
+   fun:glutMainLoopEvent
+   fun:glutMainLoop
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:strdup
+   fun:_dl_map_object
+   fun:dl_open_worker
+   fun:_dl_catch_error
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_error
+   fun:_dlerror_run
+   fun:dlopen@@GLIBC_2.2.5
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_dl_new_object
+   fun:_dl_map_object_from_fd
+   fun:_dl_map_object
+   fun:dl_open_worker
+   fun:_dl_catch_error
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_error
+   fun:_dlerror_run
+   fun:dlopen@@GLIBC_2.2.5
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_dlerror_run
+   fun:dlsym
+   obj:/usr/lib64/libGLdispatch.so.0.0.0
+   obj:/usr/lib64/libGLdispatch.so.0.0.0
+   fun:_dl_init
+   obj:/usr/lib64/ld-2.26.so
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcCreateLocaleDataBase
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+   fun:XkbTranslateKeySym
+   fun:XLookupString
+   fun:fgPlatformProcessSingleEvent
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcAddCT
+   fun:_XlcInitCTInfo
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcUtf8Loader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+   fun:XkbTranslateKeySym
+   fun:XLookupString
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XrmInternalStringToQuark
+   fun:_XlcGetCharSet
+   fun:_XlcAddCT
+   fun:_XlcInitCTInfo
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcUtf8Loader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcInitCTInfo
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcUtf8Loader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+   fun:XkbTranslateKeySym
+   fun:XLookupString
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+   fun:XkbTranslateKeySym
+   fun:XLookupString
+   fun:fgPlatformProcessSingleEvent
+   fun:glutMainLoopEvent
+   fun:glutMainLoop
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcSetConverter
+   fun:_XlcAddUtf8Converters
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+   fun:XkbTranslateKeySym
+   fun:XLookupString
+   fun:fgPlatformProcessSingleEvent
+   fun:glutMainLoopEvent
+   fun:glutMainLoop
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:calloc
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:calloc
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:calloc
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   fun:_Z6Renderv
+   fun:fghRedrawWindow
+   obj:/usr/lib64/libglut.so.3.10.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLocaleDataBase
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+   fun:XkbTranslateKeySym
+   fun:XLookupString
+   fun:fgPlatformProcessSingleEvent
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+   fun:XkbTranslateKeySym
+   fun:XLookupString
+   fun:fgPlatformProcessSingleEvent
+   fun:glutMainLoopEvent
+   fun:glutMainLoop
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:calloc
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX.so.0.0.0
+   obj:/usr/lib64/libGLX.so.0.0.0
+   obj:/usr/lib64/libGLX.so.0.0.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:calloc
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX.so.0.0.0
+   obj:/usr/lib64/libGLX.so.0.0.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:strdup
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLocaleDataBase
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:add_to_global
+   fun:dl_open_worker
+   fun:_dl_catch_error
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_error
+   fun:_dlerror_run
+   fun:dlopen@@GLIBC_2.2.5
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:strdup
+   fun:_dl_load_cache_lookup
+   fun:_dl_map_object
+   fun:openaux
+   fun:_dl_catch_error
+   fun:_dl_map_object_deps
+   fun:dl_open_worker
+   fun:_dl_catch_error
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_error
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_dl_new_object
+   fun:_dl_map_object_from_fd
+   fun:_dl_map_object
+   fun:openaux
+   fun:_dl_catch_error
+   fun:_dl_map_object_deps
+   fun:dl_open_worker
+   fun:_dl_catch_error
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_error
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_XlcCreateLocaleDataBase
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+   fun:XkbTranslateKeySym
+   fun:XLookupString
+   fun:fgPlatformProcessSingleEvent
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcCreateDefaultCharSet
+   fun:_XlcAddCT
+   fun:_XlcInitCTInfo
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcUtf8Loader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+   fun:XkbTranslateKeySym
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLocaleDataBase
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcDefaultLoader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+   fun:XkbTranslateKeySym
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   fun:glXGetClientString
+   fun:glxewInit
+   fun:glewInit
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcAddCharSet
+   fun:_XlcAddCT
+   fun:_XlcInitCTInfo
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcUtf8Loader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+   fun:XkbTranslateKeySym
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_dl_check_map_versions
+   fun:dl_open_worker
+   fun:_dl_catch_error
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_error
+   fun:_dlerror_run
+   fun:dlopen@@GLIBC_2.2.5
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:calloc
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX.so.0.0.0
+   obj:/usr/lib64/libGLX.so.0.0.0
+   obj:/usr/lib64/libGLX.so.0.0.0
+   fun:fgPlatformOpenWindow
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_dl_new_object
+   fun:_dl_map_object_from_fd
+   fun:_dl_map_object
+   fun:dl_open_worker
+   fun:_dl_catch_error
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_error
+   fun:_dlerror_run
+   fun:dlopen@@GLIBC_2.2.5
+   obj:/usr/lib64/libGLX.so.0.0.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_dl_new_object
+   fun:_dl_map_object_from_fd
+   fun:_dl_map_object
+   fun:dl_open_worker
+   fun:_dl_catch_error
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_error
+   fun:_dlerror_run
+   fun:dlopen@@GLIBC_2.2.5
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_XlcCreateLocaleDataBase
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcUtf8Loader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+   fun:XkbTranslateKeySym
+   fun:XLookupString
+   fun:fgPlatformProcessSingleEvent
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_dl_check_map_versions
+   fun:dl_open_worker
+   fun:_dl_catch_error
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_error
+   fun:_dlerror_run
+   fun:dlopen@@GLIBC_2.2.5
+   obj:/usr/lib64/libGLX.so.0.0.0
+   obj:/usr/lib64/libGLX.so.0.0.0
+   fun:glXQueryExtensionsString
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_XlcCreateDefaultCharSet
+   fun:_XlcAddCT
+   fun:_XlcInitCTInfo
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcUtf8Loader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+   fun:XkbTranslateKeySym
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_XrmInternalStringToQuark
+   fun:_XlcGetCharSet
+   fun:_XlcAddCT
+   fun:_XlcInitCTInfo
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcUtf8Loader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+   fun:_XkbGetCharset
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc
+   obj:/usr/lib64/libXi.so.6.1.0
+   fun:_XEnq
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XEventsQueued
+   fun:XPending
+   fun:fgPlatformProcessSingleEvent
+   fun:glutMainLoopEvent
+   fun:glutMainLoop
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc
+   obj:/usr/lib64/dri/i965_dri.so
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX.so.0.0.0
+   obj:/usr/lib64/libGLX.so.0.0.0
+   obj:/usr/lib64/libGLX.so.0.0.0
+   fun:fgPlatformOpenWindow
+   fun:fgOpenWindow
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:strdup
+   obj:/usr/lib64/libglapi.so.0.0.0
+   fun:_glapi_get_proc_address
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLdispatch.so.0.0.0
+   fun:__glDispatchMakeCurrent
+   obj:/usr/lib64/libGLX.so.0.0.0
+   obj:/usr/lib64/libGLX.so.0.0.0
+   fun:fgPlatformOpenWindow
+   fun:fgOpenWindow
+   fun:fgCreateWindow
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XrmInternalStringToQuark
+   fun:_XlcGetCharSet
+   fun:_XlcAddCT
+   fun:_XlcInitCTInfo
+   obj:/usr/lib64/libX11.so.6.3.0
+   obj:/usr/lib64/libX11.so.6.3.0
+   fun:_XlcCreateLC
+   fun:_XlcUtf8Loader
+   fun:_XOpenLC
+   fun:_XlcCurrentLC
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_dl_new_object
+   fun:_dl_map_object_from_fd
+   fun:_dl_map_object
+   fun:openaux
+   fun:_dl_catch_error
+   fun:_dl_map_object_deps
+   fun:dl_open_worker
+   fun:_dl_catch_error
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_error
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   obj:/usr/lib64/dri/i965_dri.so
+   fun:_dl_init
+   fun:dl_open_worker
+   fun:_dl_catch_error
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_error
+   fun:_dlerror_run
+   fun:dlopen@@GLIBC_2.2.5
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+   obj:/usr/lib64/libGLX_mesa.so.0.0.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc
+   fun:driCreateNewDrawable
+   fun:loader_dri3_drawable_init
+   fun:dri3_create_drawable
+   fun:driFetchDrawable
+   fun:dri3_bind_context
+   fun:MakeContextCurrent
+   fun:InternalMakeCurrentVendor
+   fun:InternalMakeCurrentDispatch
+   fun:CommonMakeCurrent
+   fun:fgPlatformOpenWindow
+   fun:fgOpenWindow
+   fun:fgCreateWindow
+   fun:glutCreateWindow
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:brw_new_buffer_object
+   fun:_mesa_meta_setup_vertex_objects
+   fun:_mesa_meta_Bitmap
+   fun:intelBitmap
+   fun:_mesa_Bitmap
+   fun:glutBitmapCharacter
+   fun:_Z13display2dTextffiiiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+   fun:_Z8draw_hudv
+   fun:_Z6Renderv
+   fun:fghRedrawWindow
+   fun:fghcbProcessWork
+   fun:fgEnumWindows
+   fun:fghProcessWork
+   fun:glutMainLoopEvent
+   fun:glutMainLoop
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:brw_new_buffer_object
+   fun:_mesa_alloc_shared_state
+   fun:_mesa_initialize_context
+   fun:brwCreateContext
+   fun:driCreateContextAttribs
+   fun:dri3_create_context_attribs
+   fun:dri3_create_context
+   fun:CreateContext
+   fun:glXCreateNewContext
+   fun:glXCreateNewContext
+   fun:fghCreateNewContext
+   fun:fgPlatformOpenWindow
+   fun:fgOpenWindow
+   fun:fgCreateWindow
+   fun:glutCreateWindow
+   fun:main
+}
+
+
