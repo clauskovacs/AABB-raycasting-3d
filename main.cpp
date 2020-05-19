@@ -22,20 +22,25 @@ void keyPressed(unsigned char key, int x, int y);	// (keys a .. z, esc, ...)
 void exitfunc();												// exit - callback function
 // GLUT-functions / variables
 
-// window size preferences
-int wnd_width  = 1280/1.5;	// window width
-int wnd_height = 720/1.5;	// window height
+// window size / position preferences
+// position options
+int wnd_pos_horizontal	= 750;
+int wnd_pos_vertical	= 10;
+// size options
+float wnd_scaling		= 2.0;	// scaling factor for windows dimensions
+int wnd_width			= 1280/wnd_scaling;	// window width
+int wnd_height			= 720/wnd_scaling;	// window height
 // window size preferences 
 
 // mouse rotate/manipulation variables
-float rotY = 20;
-float rotZ = 50;
-float deltaAngle = 0.01;
-float angle = 0;
-bool mouse_down = false;
-float cache_x = 0;
-float cache_y = 0;
-bool rot_check = 0;
+float rotY			= 20;
+float rotZ			= 50;
+float deltaAngle	= 0.01;
+float angle			= 0;
+bool mouse_down		= false;
+float cache_x		= 0;
+float cache_y		= 0;
+bool rot_check		= 0;
 int window1;
 float dx, dy;
 
@@ -57,7 +62,7 @@ float delta = 0.95;
 // S&P-Grid test variables
 
 // AABBraycast3d variables
-pt3d testpt1;
+// pt3d testpt1;
 // AABBraycast3d variables
 
 
@@ -252,7 +257,7 @@ int main(int argc, char **argv)
                         GLUT_RGB    |					// Fpuffer mit Rot,Grün und Blau
 						GLUT_MULTISAMPLE);
 	glutInitWindowSize(wnd_width, wnd_height);			// windowdimentions (width, height)
-	glutInitWindowPosition(50, 50);						// windowposition (vertical, horizontal)
+	glutInitWindowPosition(wnd_pos_horizontal, wnd_pos_vertical);						// windowposition (horizontal, vertical)
 
 	glDisable(GL_DEPTH_TEST);
 
@@ -448,7 +453,7 @@ void Render(void)
 	// coordinate system
 
 
-	std::cout << "PRE: " << testpt1.pt3d_get_x() << std::endl;
+// 	std::cout << "PRE: " << testpt1.pt3d_get_x() << std::endl;
 
 
     // S&P GRID TEST
@@ -457,9 +462,25 @@ void Render(void)
 	{
 		std::cout << "init structure" << std::endl;
 
-		testpt1.pt3d_set_x(65);
-		testpt1.pt3d_set_y(65);
-		testpt1.pt3d_set_z(65);
+		pt3d testpt(1.0, 2.0, 3.0);
+
+		std::cout << std::endl;
+		testpt.print_info();
+
+		std::cout << std::endl;
+		testpt.pt3d_set_x(5.001);
+
+
+		std::cout << std::endl;
+		testpt.print_info();
+
+
+		exit(1);
+
+
+// 		testpt1.pt3d_set_x(65);
+// 		testpt1.pt3d_set_y(65);
+// 		testpt1.pt3d_set_z(65);
 
 
 
