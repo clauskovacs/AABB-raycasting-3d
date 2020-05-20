@@ -419,6 +419,10 @@ void draw_hud()
     display2dText(5, spacing_hud_offet_y + spacing_hud_text * 2, hudcolor_r, hudcolor_g, hudcolor_b, cstr3);
 }
 
+// Ray definint points (origin, direction)
+pt3d rayOrigin(65.0, 0.0, 65.0);		// point of origin of the ray
+pt3d rayDirection(-1.0, 0.0, -1.0);	// unit direction of the ray casting
+
 
 void Render(void)
 {
@@ -452,8 +456,90 @@ void Render(void)
 	glEnd();
 	// coordinate system
 
+	//////////////////////////
+	// RAY - AABB - testing //
+	//////////////////////////
 
-// 	std::cout << "PRE: " << testpt1.pt3d_get_x() << std::endl;
+	// draw the origin
+	glPointSize(10.0);
+	glBegin(GL_POINTS);
+		glColor4f(1.0f, 1.0f, 0.0f, 1.0f);	// yellow
+		glVertex3f(rayOrigin.pt3d_get_x(), rayOrigin.pt3d_get_y(), rayOrigin.pt3d_get_z());
+	glEnd();
+
+
+	// draw the ray
+	glBegin(GL_LINES);
+		glLineWidth(10.0);
+		glColor4f(0.0f, 0.0f, 1.0f, 1.0f);	// blue
+		glVertex3f(rayOrigin.pt3d_get_x(), rayOrigin.pt3d_get_y(), rayOrigin.pt3d_get_z());
+		glVertex3f(rayOrigin.pt3d_get_x() + rayDirection.pt3d_get_x()*1000,
+				   rayOrigin.pt3d_get_y() + rayDirection.pt3d_get_y()*1000,
+				   rayOrigin.pt3d_get_z() + rayDirection.pt3d_get_z()*1000
+				  );
+	glEnd();
+
+
+	// draw the outmost wirecube which encloses all bins for the sweep and prune grid hybrid
+	glLineWidth(1.0);
+	// bottom
+	glBegin(GL_LINE_STRIP);
+		glColor4f(0.0f, 0.0f, 1.0f, 1.0f);	// blue
+		glVertex3f(newgrid.gridBoundaryMinX, newgrid.gridBoundaryMinY, newgrid.gridBoundaryMinZ);
+		glVertex3f(newgrid.gridBoundaryMaxX, newgrid.gridBoundaryMinY, newgrid.gridBoundaryMinZ);
+		glVertex3f(newgrid.gridBoundaryMaxX, newgrid.gridBoundaryMaxY, newgrid.gridBoundaryMinZ);
+		glVertex3f(newgrid.gridBoundaryMinX, newgrid.gridBoundaryMaxY, newgrid.gridBoundaryMinZ);
+		glVertex3f(newgrid.gridBoundaryMinX, newgrid.gridBoundaryMinY, newgrid.gridBoundaryMinZ);
+	glEnd();
+
+	// top
+	glBegin(GL_LINE_STRIP);
+		glVertex3f(newgrid.gridBoundaryMinX, newgrid.gridBoundaryMinY, newgrid.gridBoundaryMaxZ);
+		glVertex3f(newgrid.gridBoundaryMaxX, newgrid.gridBoundaryMinY, newgrid.gridBoundaryMaxZ);
+		glVertex3f(newgrid.gridBoundaryMaxX, newgrid.gridBoundaryMaxY, newgrid.gridBoundaryMaxZ);
+		glVertex3f(newgrid.gridBoundaryMinX, newgrid.gridBoundaryMaxY, newgrid.gridBoundaryMaxZ);
+		glVertex3f(newgrid.gridBoundaryMinX, newgrid.gridBoundaryMinY, newgrid.gridBoundaryMaxZ);
+	glEnd();
+
+	// connection lines top <-> bottom
+	glBegin(GL_LINES);
+		glVertex3f(newgrid.gridBoundaryMinX, newgrid.gridBoundaryMinY, newgrid.gridBoundaryMinZ);
+		glVertex3f(newgrid.gridBoundaryMinX, newgrid.gridBoundaryMinY, newgrid.gridBoundaryMaxZ);
+
+		glVertex3f(newgrid.gridBoundaryMinX, newgrid.gridBoundaryMaxY, newgrid.gridBoundaryMinZ);
+		glVertex3f(newgrid.gridBoundaryMinX, newgrid.gridBoundaryMaxY, newgrid.gridBoundaryMaxZ);
+
+		glVertex3f(newgrid.gridBoundaryMaxX, newgrid.gridBoundaryMinY, newgrid.gridBoundaryMinZ);
+		glVertex3f(newgrid.gridBoundaryMaxX, newgrid.gridBoundaryMinY, newgrid.gridBoundaryMaxZ);
+
+		glVertex3f(newgrid.gridBoundaryMaxX, newgrid.gridBoundaryMaxY, newgrid.gridBoundaryMinZ);
+		glVertex3f(newgrid.gridBoundaryMaxX, newgrid.gridBoundaryMaxY, newgrid.gridBoundaryMaxZ);
+	glEnd();
+
+
+	// calculate intersection of a ray with the global AABB-box (which encases all 'sub-boxes')
+	pt3d AABBpt1(newgrid.gridBoundaryMinX, newgrid.gridBoundaryMinY, newgrid.gridBoundaryMinZ);
+	pt3d AABBpt2(newgrid.gridBoundaryMaxX, newgrid.gridBoundaryMaxY, newgrid.gridBoundaryMaxZ);
+
+	bool returnAABBrayColl = pt3d::rayAABBintersecTest(rayOrigin, rayDirection, AABBpt1, AABBpt2);
+	std::cout << "AABB-ray return: " << returnAABBrayColl << std::endl;
+
+	// move the point(s) when no collision between the ray and the AABB-box has been detected
+	if (returnAABBrayColl == true)	// collision is ongoing
+	{
+		float rayOriginXaddDelta = 0.05;
+	//  	rayOrigin.pt3d_set_x(rayOrigin.pt3d_get_x()+rayOriginXaddDelta);
+	//  	rayOrigin.pt3d_set_y(rayOrigin.pt3d_get_y()+rayOriginXaddDelta);
+ 		rayOrigin.pt3d_set_z(rayOrigin.pt3d_get_z()+rayOriginXaddDelta);
+// 		rayDirection.pt3d_set_z(rayDirection.pt3d_get_z()+rayOriginXaddDelta);
+	}
+
+// 	exit(1);
+
+	//////////////////////////
+	// RAY - AABB - testing //
+	//////////////////////////
+
 
 
     // S&P GRID TEST
@@ -462,6 +548,7 @@ void Render(void)
 	{
 		std::cout << "init structure" << std::endl;
 
+		/*
 		pt3d testpt(1.0, 2.0, 3.0);
 
 		std::cout << std::endl;
@@ -476,6 +563,7 @@ void Render(void)
 
 
 		exit(1);
+		*/
 
 
 // 		testpt1.pt3d_set_x(65);

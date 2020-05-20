@@ -17,7 +17,10 @@ class pt3d
 			x = initX;
 			y = initY;
 			z = initZ;
-		}
+		};
+
+		// destructor
+		~pt3d(){};
 
 		// retrieve informations about this point
 		void print_info();
@@ -32,7 +35,8 @@ class pt3d
 		float pt3d_get_y();
 		float pt3d_get_z();
 
-// 		pt3d rotate_x(float rot_angle);
+		// ray-AABB intersection test
+		static bool rayAABBintersecTest(pt3d rayOrigin, pt3d rayDirection, pt3d AABBpt1, pt3d AABBpt2);
 };
 
 #endif
