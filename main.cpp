@@ -492,8 +492,6 @@ void Render(void)
 
 	// search for colliding AABB-boxes against the ray
 	bool returnAABBrayColl = pt3d::rayAABBintersecTest(rayOrigin, rayDirection, AABBpt1, AABBpt2, grid::factor);
-// 	std::cout << "AABB-ray return: " << returnAABBrayColl << std::endl;
-
 
 	// move the point(s) when no collision between the ray and the AABB-box has been detected
 	if (returnAABBrayColl == true)	// collision is ongoing
@@ -510,7 +508,6 @@ void Render(void)
 	//////////////////////////
 	// RAY - AABB - testing //
 	//////////////////////////
-
 
 
     // S&P GRID TEST
