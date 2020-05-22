@@ -423,7 +423,6 @@ void draw_hud()
 pt3d rayOrigin(65.0, 0.0, 65.0);		// point of origin of the ray
 pt3d rayDirection(-1.0, 0.0, -1.0);	// unit direction of the ray casting
 
-
 void Render(void)
 {
 	glMatrixMode(GL_PROJECTION);
@@ -482,54 +481,26 @@ void Render(void)
 
 	// draw the outmost wirecube which encloses all bins for the sweep and prune grid hybrid
 	glLineWidth(1.0);
-	// bottom
-	glBegin(GL_LINE_STRIP);
-		glColor4f(0.0f, 0.0f, 1.0f, 1.0f);	// blue
-		glVertex3f(newgrid.gridBoundaryMinX, newgrid.gridBoundaryMinY, newgrid.gridBoundaryMinZ);
-		glVertex3f(newgrid.gridBoundaryMaxX, newgrid.gridBoundaryMinY, newgrid.gridBoundaryMinZ);
-		glVertex3f(newgrid.gridBoundaryMaxX, newgrid.gridBoundaryMaxY, newgrid.gridBoundaryMinZ);
-		glVertex3f(newgrid.gridBoundaryMinX, newgrid.gridBoundaryMaxY, newgrid.gridBoundaryMinZ);
-		glVertex3f(newgrid.gridBoundaryMinX, newgrid.gridBoundaryMinY, newgrid.gridBoundaryMinZ);
-	glEnd();
-
-	// top
-	glBegin(GL_LINE_STRIP);
-		glVertex3f(newgrid.gridBoundaryMinX, newgrid.gridBoundaryMinY, newgrid.gridBoundaryMaxZ);
-		glVertex3f(newgrid.gridBoundaryMaxX, newgrid.gridBoundaryMinY, newgrid.gridBoundaryMaxZ);
-		glVertex3f(newgrid.gridBoundaryMaxX, newgrid.gridBoundaryMaxY, newgrid.gridBoundaryMaxZ);
-		glVertex3f(newgrid.gridBoundaryMinX, newgrid.gridBoundaryMaxY, newgrid.gridBoundaryMaxZ);
-		glVertex3f(newgrid.gridBoundaryMinX, newgrid.gridBoundaryMinY, newgrid.gridBoundaryMaxZ);
-	glEnd();
-
-	// connection lines top <-> bottom
-	glBegin(GL_LINES);
-		glVertex3f(newgrid.gridBoundaryMinX, newgrid.gridBoundaryMinY, newgrid.gridBoundaryMinZ);
-		glVertex3f(newgrid.gridBoundaryMinX, newgrid.gridBoundaryMinY, newgrid.gridBoundaryMaxZ);
-
-		glVertex3f(newgrid.gridBoundaryMinX, newgrid.gridBoundaryMaxY, newgrid.gridBoundaryMinZ);
-		glVertex3f(newgrid.gridBoundaryMinX, newgrid.gridBoundaryMaxY, newgrid.gridBoundaryMaxZ);
-
-		glVertex3f(newgrid.gridBoundaryMaxX, newgrid.gridBoundaryMinY, newgrid.gridBoundaryMinZ);
-		glVertex3f(newgrid.gridBoundaryMaxX, newgrid.gridBoundaryMinY, newgrid.gridBoundaryMaxZ);
-
-		glVertex3f(newgrid.gridBoundaryMaxX, newgrid.gridBoundaryMaxY, newgrid.gridBoundaryMinZ);
-		glVertex3f(newgrid.gridBoundaryMaxX, newgrid.gridBoundaryMaxY, newgrid.gridBoundaryMaxZ);
-	glEnd();
-
+	pt3d outercubeMin(newgrid.gridBoundaryMinX, newgrid.gridBoundaryMinY, newgrid.gridBoundaryMinZ);
+	pt3d outercubeMax(newgrid.gridBoundaryMaxX, newgrid.gridBoundaryMaxY, newgrid.gridBoundaryMaxZ);
+	glColor4f(0.0f, 0.0f, 1.0f, 1.0f);	// blue
+  	pt3d::drawBoundaryCube(outercubeMin, outercubeMax);
 
 	// calculate intersection of a ray with the global AABB-box (which encases all 'sub-boxes')
 	pt3d AABBpt1(newgrid.gridBoundaryMinX, newgrid.gridBoundaryMinY, newgrid.gridBoundaryMinZ);
 	pt3d AABBpt2(newgrid.gridBoundaryMaxX, newgrid.gridBoundaryMaxY, newgrid.gridBoundaryMaxZ);
 
-	bool returnAABBrayColl = pt3d::rayAABBintersecTest(rayOrigin, rayDirection, AABBpt1, AABBpt2);
-	std::cout << "AABB-ray return: " << returnAABBrayColl << std::endl;
+	// search for colliding AABB-boxes against the ray
+	bool returnAABBrayColl = pt3d::rayAABBintersecTest(rayOrigin, rayDirection, AABBpt1, AABBpt2, grid::factor);
+// 	std::cout << "AABB-ray return: " << returnAABBrayColl << std::endl;
+
 
 	// move the point(s) when no collision between the ray and the AABB-box has been detected
 	if (returnAABBrayColl == true)	// collision is ongoing
 	{
 		float rayOriginXaddDelta = 0.05;
 	//  	rayOrigin.pt3d_set_x(rayOrigin.pt3d_get_x()+rayOriginXaddDelta);
-	//  	rayOrigin.pt3d_set_y(rayOrigin.pt3d_get_y()+rayOriginXaddDelta);
+	  	rayOrigin.pt3d_set_y(rayOrigin.pt3d_get_y()+rayOriginXaddDelta);
  		rayOrigin.pt3d_set_z(rayOrigin.pt3d_get_z()+rayOriginXaddDelta);
 // 		rayDirection.pt3d_set_z(rayDirection.pt3d_get_z()+rayOriginXaddDelta);
 	}
@@ -882,7 +853,7 @@ void Render(void)
 		newgrid.draw_grid();
 	}
 
-	bool draw_elements = true;	// draw the elements
+	bool draw_elements = false;	// draw the elements
 
 	int returnAmtCollisions = 0;	// how many collisions occured during each step
 

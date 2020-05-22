@@ -39,18 +39,17 @@ class grid
 {
 	public:
 		// power of two is suggested / mandatory to work
-        float gridBoundaryMinX = -64.0;
-        float gridBoundaryMaxX = 64.0;
+        static constexpr float gridBoundaryMinX = -64.0;
+        static constexpr float gridBoundaryMaxX =  64.0;
 
-		float gridBoundaryMinY = -64.0;
-        float gridBoundaryMaxY = 64.0;
+		static constexpr float gridBoundaryMinY = -64.0;
+        static constexpr float gridBoundaryMaxY =  64.0;
 
-		float gridBoundaryMinZ = -64.0;
-        float gridBoundaryMaxZ = 64.0;
-
+		static constexpr float gridBoundaryMinZ = -64.0;
+        static constexpr float gridBoundaryMaxZ =  64.0;
 
 		// power of two is suggested / mandatory to work
-		int factor = 3;
+		static constexpr int factor = 4;
         int numberCellsX = pow(2, factor);
         int numberCellsY = pow(2, factor);
         int numberCellsZ = pow(2, factor);

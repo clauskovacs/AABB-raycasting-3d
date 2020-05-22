@@ -36,7 +36,10 @@ class pt3d
 		float pt3d_get_z();
 
 		// ray-AABB intersection test
-		static bool rayAABBintersecTest(pt3d rayOrigin, pt3d rayDirection, pt3d AABBpt1, pt3d AABBpt2);
+		static bool rayAABBintersecTest(pt3d rayOrigin, pt3d rayDirection, pt3d AABBpt1, pt3d AABBpt2, int gridSize);
+
+		// draw a (wire)cube around the given min/max - coordinates
+		static void drawBoundaryCube(pt3d endpointMin, pt3d endpointMax);
 };
 
 #endif
