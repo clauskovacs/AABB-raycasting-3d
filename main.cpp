@@ -61,12 +61,6 @@ std::vector<colliders> colliders_storage(maxAmtElements);
 float delta = 0.95;
 // S&P-Grid test variables
 
-// AABBraycast3d variables
-// pt3d testpt1;
-// AABBraycast3d variables
-
-
-
 static bool paused = false;	// pause/unpause state variable
 
 void drawCube(float xmin, float xmax, float ymin, float ymax, float zmin, float zmax, float lineWidth)
@@ -238,7 +232,7 @@ void mouseMove(int x, int y)
 void myIdleFunc()
 {
 	float rotation_speed = 0.05;
-	bool rotate = false;
+	bool rotate = true;
 
 	if (rotate == true)
 		rotZ += rotation_speed;
@@ -420,8 +414,10 @@ void draw_hud()
 }
 
 // Ray definint points (origin, direction)
-pt3d rayOrigin(65.0, 0.0, 65.0);		// point of origin of the ray
-pt3d rayDirection(-1.0, 0.0, -1.0);	// unit direction of the ray casting
+pt3d rayOrigin(80.0, 80.0, 80.0);		// point of origin of the ray
+pt3d rayDirection(-1.0, -1.0, -1.0);	// unit direction of the ray casting
+pt3d rayOriginRotated(0, 0, 0);			// rotated point of origin
+float anglept1 = 0.0;					// rotational angle of origin
 
 void Render(void)
 {
@@ -463,7 +459,7 @@ void Render(void)
 	glPointSize(10.0);
 	glBegin(GL_POINTS);
 		glColor4f(1.0f, 1.0f, 0.0f, 1.0f);	// yellow
-		glVertex3f(rayOrigin.pt3d_get_x(), rayOrigin.pt3d_get_y(), rayOrigin.pt3d_get_z());
+		glVertex3f(rayOriginRotated.pt3d_get_x(), rayOriginRotated.pt3d_get_y(), rayOriginRotated.pt3d_get_z());
 	glEnd();
 
 
@@ -471,10 +467,10 @@ void Render(void)
 	glBegin(GL_LINES);
 		glLineWidth(10.0);
 		glColor4f(0.0f, 0.0f, 1.0f, 1.0f);	// blue
-		glVertex3f(rayOrigin.pt3d_get_x(), rayOrigin.pt3d_get_y(), rayOrigin.pt3d_get_z());
-		glVertex3f(rayOrigin.pt3d_get_x() + rayDirection.pt3d_get_x()*1000,
-				   rayOrigin.pt3d_get_y() + rayDirection.pt3d_get_y()*1000,
-				   rayOrigin.pt3d_get_z() + rayDirection.pt3d_get_z()*1000
+		glVertex3f(rayOriginRotated.pt3d_get_x(), rayOriginRotated.pt3d_get_y(), rayOriginRotated.pt3d_get_z());
+		glVertex3f(rayOriginRotated.pt3d_get_x() + rayDirection.pt3d_get_x()*1000,
+				   rayOriginRotated.pt3d_get_y() + rayDirection.pt3d_get_y()*1000,
+				   rayOriginRotated.pt3d_get_z() + rayDirection.pt3d_get_z()*1000
 				  );
 	glEnd();
 
@@ -491,8 +487,9 @@ void Render(void)
 	pt3d AABBpt2(newgrid.gridBoundaryMaxX, newgrid.gridBoundaryMaxY, newgrid.gridBoundaryMaxZ);
 
 	// search for colliding AABB-boxes against the ray
-	bool returnAABBrayColl = pt3d::rayAABBintersecTest(rayOrigin, rayDirection, AABBpt1, AABBpt2, grid::factor);
+	bool returnAABBrayColl = pt3d::rayAABBintersecTest(rayOriginRotated, rayDirection, AABBpt1, AABBpt2, grid::factor);
 
+	/*
 	// move the point(s) when no collision between the ray and the AABB-box has been detected
 	if (returnAABBrayColl == true)	// collision is ongoing
 	{
@@ -502,6 +499,29 @@ void Render(void)
  		rayOrigin.pt3d_set_z(rayOrigin.pt3d_get_z()+rayOriginXaddDelta);
 // 		rayDirection.pt3d_set_z(rayDirection.pt3d_get_z()+rayOriginXaddDelta);
 	}
+	*/
+
+	// calculate the rotated origin
+	rayOriginRotated = rayOrigin.rotPt3dAroundZ(anglept1);
+
+	// calculate the direction of the ray (to be always pointing towards the origin)
+	// vector entries
+	float vecRayDirNewX = 0.0 - rayOriginRotated.pt3d_get_x();
+	float vecRayDirNewY = 0.0 - rayOriginRotated.pt3d_get_y(); 
+	float vecRayDirNewZ = 0.0 - rayOriginRotated.pt3d_get_z();
+	// length of vector
+	float normaliseVecLenRayDir = sqrt(	vecRayDirNewX*vecRayDirNewX +
+										vecRayDirNewY*vecRayDirNewY + 
+										vecRayDirNewZ*vecRayDirNewZ
+									  );
+	// calculate the (normalized) new direction pointing towards the origin
+	rayDirection.pt3d_set_x(vecRayDirNewX / normaliseVecLenRayDir);
+	rayDirection.pt3d_set_y(vecRayDirNewY / normaliseVecLenRayDir);
+	rayDirection.pt3d_set_z(vecRayDirNewZ / normaliseVecLenRayDir);
+
+
+	// change the angle of rotation -> rotate the origin
+	anglept1 += 0.005;
 
 // 	exit(1);
 

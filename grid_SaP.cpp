@@ -43,7 +43,7 @@ void grid::draw_grid()
 				float z_elevation = gridBoundaryMinZ + j*cellsizeZ;
 
 				glBegin(GL_LINES);
-					glColor4f(1.0f, 0.0f, 0.0f, 0.5f);     // red
+					glColor4f(0.0f, 1.0f, 0.0f, 0.5f);     // green
 					glVertex3f(gridBoundaryMinX + i*cellsizeX, gridBoundaryMinY, z_elevation);
 					glVertex3f(gridBoundaryMinX + i*cellsizeX, gridBoundaryMinY + k*cellsizeY, z_elevation);
 

@@ -40,6 +40,9 @@ class pt3d
 
 		// draw a (wire)cube around the given min/max - coordinates
 		static void drawBoundaryCube(pt3d endpointMin, pt3d endpointMax);
+
+		// rotate a pt3d around the z-axis
+		pt3d rotPt3dAroundZ(float rotAngle);
 };
 
 #endif

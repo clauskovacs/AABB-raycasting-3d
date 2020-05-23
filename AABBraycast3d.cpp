@@ -187,3 +187,28 @@ bool pt3d::rayAABBintersecTest(pt3d rayOrigin, pt3d rayDirection, pt3d AABBptMin
 	return true;
 }
 
+// rotate a pt3d around the z-axis and return the rotated point (around the angle rotAngle)
+pt3d pt3d::rotPt3dAroundZ(float rotAngle)
+{
+	// rotation around z-axis (rotational matrix):
+	/*
+	(  cos(a)	-sin(a)		0  )
+	(  sin(a)	 cos(a)		0  )
+	(  0			0		1  )
+	*/
+
+	// define the pt3d which will be returned
+	pt3d returnPoint(0, 0, 0);
+
+	// calculate the sin/cos-factors
+	float cosRotpt1 = cos(rotAngle);
+	float sinRotpt1 = sin(rotAngle);
+
+	// set the new (rotated) coordinates of the pt3d object
+ 	returnPoint.x = cosRotpt1 * this-> x - sinRotpt1 * this-> y;
+ 	returnPoint.y = sinRotpt1 * this-> x + cosRotpt1 * this-> y;
+	returnPoint.z = this->z;
+
+	// return the (manipulated) point
+	return returnPoint;
+}
